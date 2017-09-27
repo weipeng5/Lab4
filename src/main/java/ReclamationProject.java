@@ -8,19 +8,37 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+
+/**
+ * A method.
+ */
+public class ReclamationProject {
+    /**
+     * A method.
+     * @param a The integer to square.
+     * @param b The integer to square.
+     * @return just return the
+     */
+    static String doit(final String longerString1, final String shorterString1) {
+        String longerString=longerString1;
+        String shorterString=shorterString1;
+        if (shorterString.length() > longerString.length()) {
+
+            String c = longerString;
+            longerString = shorterString; shorterString = c;
+            }
+         String r = ""; // I love the ternary operator!
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
+        for (int charStart = 0; charStart < longerString.length(); charStart++) {
+            for (int j = longerString.length() - charStart; j > 0; j--) {
+                for (int k = 0; k < shorterString.length() - j; end++) {
+                    if (longerString.regionMatches(charStart, shorterString, end, j)
+                            && j > r.length()) {
+                        r = longerString.substring(charStart, charStart + j); // Do it!
+                    }
+                        }
+                } // Ah yeah
         } return r; }
 }
